@@ -8,6 +8,6 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = params[:title]
+    @title = params[:title]
   end
 end

@@ -1,2 +1,8 @@
 <h1>Movies#show</h1>
 <p>Find me in app/views/movies/show.html.erb</p>
+<div class="text-center">
+   <%= @title %></br>
+   <h2>IMBD vote average:</h2> <%= get_movie(@title).vote_average %></br>
+   <h2>Tagline:</h2> <%= get_movie(@title).tagline %></br>
+   <h2>Overview:</h2> <%= get_movie(@title).overview %>
+</div>

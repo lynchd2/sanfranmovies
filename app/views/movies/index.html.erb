@@ -7,6 +7,7 @@
   <% @results.each do |movie| %>
     <div class="col-md-4 movie-show text-center">
       <%= movie.title %></br>
+      <%= link_to "Click Here for more information", movie_path(movie.title) %>
       <%= image_tag("http://image.tmdb.org/t/p/original#{movie_poster(movie.title)}", class: "movie-poster-show")%></br>   
     </div>
   <% end %>
