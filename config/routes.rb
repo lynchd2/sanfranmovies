@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
+  get 'movies/index'
 
-  get 'users/new'
+  get 'movies/show'
 
-  get 'users/edit'
-
-  get 'users/show'
-
-  get 'users/index'
+  resource :session, :only => [:new, :create, :destroy]
+  get "login" => "sessions#new"
+  delete "logout" => "sessions#destroy"
 
   resources :users
+  resources :movies
 
   root "users#new"
 
+  get '*path' => redirect("/")
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

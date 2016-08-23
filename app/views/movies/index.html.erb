@@ -1,0 +1,13 @@
+<h1 class="text-center">Movies Search</h1>
+
+<h3 class="text-center">Movies Filmed Near: <span class="street-address"><%= @street %></span></h3>
+<% if @results == "Nothing there" || @results.empty? %>
+  <h1 class="text-center">Nothing is at '<%=@street%>'... :(</h1></br><br>
+<% else %>
+  <% @results.each do |movie| %>
+    <div class="col-md-4 movie-show text-center">
+      <%= movie.title %></br>
+      <%= image_tag("http://image.tmdb.org/t/p/original#{movie_poster(movie.title)}", class: "movie-poster-show")%></br>   
+    </div>
+  <% end %>
+<% end %>

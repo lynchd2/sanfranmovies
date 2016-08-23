@@ -8,7 +8,9 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :auth_token
       t.string :email
       t.string :password_digest
-      t.string :address
+      t.integer :number_street
+      t.string :street
+      t.string :street_suffix
       t.float :latitude
       t.float :longitude
     end

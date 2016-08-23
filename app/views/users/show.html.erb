@@ -1,2 +1,22 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container text-center">
+  <h3 class="text-center">Your Information</h3>
+  Latitude: <%= @user.latitude %></br>
+  longitude: <%= @user.longitude %></br>
+  Name: <%= @user.name %></br>
+  Email: <%= @user.email %></br>
+  Address: <%= @user.number_street if current_user == @user %>
+  <%= @user.street if current_user == @user %>
+  <%= @user.street_suffix if current_user == @user %></br>
+  <%= link_to "Edit your information", edit_user_path(current_user) %>
+</div></br></br></br>
+
+<h3 class="text-center">Movies Near Your address</h3>
+<% if @results == "Nothing there" %>
+  <h1 class="text-center">Nothing is at your address... :(</h1></br><br>
+<% else %>
+<% @results.each do |movie| %>
+  <div class="col-md-4 movie-show text-center">
+    <%= movie.title %></br>
+    <%= image_tag("http://image.tmdb.org/t/p/original#{movie_poster(movie.title)}", class: "movie-poster-show")%></br>   
+  </div>
+<% end %>

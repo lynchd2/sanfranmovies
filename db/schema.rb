@@ -23,7 +23,9 @@ ActiveRecord::Schema.define(version: 20160823144951) do
     t.string   "auth_token"
     t.string   "email"
     t.string   "password_digest"
-    t.string   "address"
+    t.integer  "number_street"
+    t.string   "street"
+    t.string   "street_suffix"
     t.float    "latitude"
     t.float    "longitude"
     t.index ["auth_token"], name: "index_users_on_auth_token", using: :btree

@@ -1,0 +1,7 @@
+<div class="text-center">
+  <h5 class="text-center">Want to see if a movie was filmed where you are now? Input your current address below</h5>
+  <%= form_tag("/movies", method: "get") do %>
+    <%= text_field_tag(:search, params[:search], placeholder: "Example: '123 Main Street'", class: "search-input") %>
+    <%= submit_tag("Search", name: nil, class: "btn btn-primary") %>
+  <% end %>
+</div></br></br>

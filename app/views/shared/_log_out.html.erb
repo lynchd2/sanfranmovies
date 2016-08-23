@@ -1,0 +1,27 @@
+<% if signed_in_user? %>
+  <div class="log-in-information">
+    <div class= "col-xs-9 col-md-9 logged-in-text">
+      Welcome, <%= link_to current_user.email, user_path(current_user)  %>
+      <%= link_to "Logout", logout_path, :method => :delete %>
+    </div>
+  </div>
+<% else %>
+  <%= form_tag session_path do  %>
+    <div class="log-in-information">
+      <div class="col-xs-3 col-md-3">
+        <%= text_field_tag :email, nil, placeholder: "Email", html: {class: "form-control"} %>
+      </div>
+      <div class="col-xs-3 col-md-3">
+        <%= password_field_tag :password, nil, placeholder: "Password", html: {class: "form-control"} %>
+      </div>
+
+      <div class="col-xs-2 col-md-2">
+        <%= label_tag "Remember me?", nil, {class: "danebook-text remember-me"} %>
+        <%= check_box_tag :remember_me %>
+      </div>
+      <div class="col-xs-1 col-md-1">
+        <%= submit_tag "Log in", class: "btn btn-success" %>
+      </div>
+    </div>
+  <% end %>
+<% end %></br></br>

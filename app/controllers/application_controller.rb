@@ -3,12 +3,15 @@ class ApplicationController < ActionController::Base
 
   private
 
-
+  def check_params(street) 
+    "ONEWORD " + street if street.length < 2
+    street if street.length > 1
+  end
+  
   def set_user
     @user = User.find_by_id(params[:user_id])
     redirect_to root_path, :flash=> {:danger => "Unable to find that user"} unless @user
   end
-
 
   def sign_in(user)
     user.regenerate_auth_token

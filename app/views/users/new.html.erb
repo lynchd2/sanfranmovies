@@ -1,24 +1,35 @@
-<h1>User#new</h1>
-<p>Find me in app/views/user/new.html.erb</p>
-<div class="row">
-  <%= form_for @user do |f| %>
-    <div class= "col-md-2 sign-up-field">
-      <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
-    </div>
-    <div class=" col-md-2 sign-up-field">
-      <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
-    </div>
-    <div class= "col-md-4 sign-up-field">
-        <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
-    </div>
-    <div class= "col-md-4 sign-up-field">
-      <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
-    </div>
-    <div class= "col-md-4 sign-up-field">
-      <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", class: "form-control" %>
-    </div>
-    <div class="col-md-4">
-      <%= f.submit "Sign Up!", class: "btn btn-success sign-up-field" %>
-    </div>
+<div class="container">
+  <h1 class="website-title text-center">San Fransico Movie Locater </h1>
+  <%= image_tag("http://www.sanfrancisco.travel/sites/sftraveldev.prod.acquia-sites.com/files/field/image/site-photo.jpg", class: "san-francisco-image" )%>
+  <% unless signed_in_user? %>
+    <%= form_for @user, class: "form-group" do |f| %>
+      <div class= "col-md-12 sign-up-field">
+        <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+      </div>
+      <div class=" col-md-12 sign-up-field">
+        <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+      </div>
+      <div class=" col-md-12 sign-up-field">
+        <%= f.text_field :number_street, placeholder: "Street number", class: "form-control" %>
+      </div>
+      <div class=" col-md-12 sign-up-field">
+        <%= f.text_field :street, placeholder: "Street name", class: "form-control" %>
+      </div>
+      <div class=" col-md-12 sign-up-field">
+        <%= f.text_field :street_suffix, placeholder: "Street Suffix", class: "form-control" %>
+      </div>
+      <div class= "col-md-12 sign-up-field">
+          <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+      </div>
+      <div class= "col-md-6 sign-up-field">
+        <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+      </div>
+      <div class= "col-md-6 sign-up-field">
+        <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", class: "form-control" %>
+      </div>
+      <div class="col-md-6">
+        <%= f.submit "Sign Up!", class: "btn btn-success sign-up-field text-center" %>
+      </div>
+    <% end %>
   <% end %>
 </div>
