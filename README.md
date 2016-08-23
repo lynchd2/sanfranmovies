@@ -1,5 +1,5 @@
 # Welcome to the San Francisco Movie Locator!
-Find the deployed version by [clicking here]("https://peaceful-depths-43249.herokuapp.com/")
+Find the deployed version by [clicking here](https://peaceful-depths-43249.herokuapp.com/)
 
 #About
 * San Francisco Movie Locator uses your given address, or a searchable address in San Francisco, and searches for movies produced since 1924 that were filmed at that location. The address does not have to be EXACTLY at the given address(Main Street versus AT 123 Main Street) and will give you the same results.
