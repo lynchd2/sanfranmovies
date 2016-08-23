@@ -1,9 +1,9 @@
 <div class="container text-center">
   <h3 class="text-center">Your Information</h3>
-  Latitude: <%= @user.latitude %></br>
-  longitude: <%= @user.longitude %></br>
+  Latitude: <%= @user.latitude  if current_user == @user %></br>
+  longitude: <%= @user.longitude  if current_user == @user %></br>
   Name: <%= @user.name %></br>
-  Email: <%= @user.email %></br>
+  Email: <%= @user.email if current_user == @user %></br>
   Address: <%= @user.number_street if current_user == @user %>
   <%= @user.street if current_user == @user %>
   <%= @user.street_suffix if current_user == @user %></br>
@@ -14,9 +14,10 @@
 <% if @results == "Nothing there" %>
   <h1 class="text-center">Nothing is at your address... :(</h1></br><br>
 <% else %>
-<% @results.each do |movie| %>
-  <div class="col-md-4 movie-show text-center">
-    <%= movie.title %></br>
-    <%= image_tag("http://image.tmdb.org/t/p/original#{movie_poster(movie.title)}", class: "movie-poster-show")%></br>   
-  </div>
+  <% @results.each do |movie| %>
+    <div class="col-md-4 movie-show text-center">
+      <%= movie.title %></br>
+      <%= image_tag("http://image.tmdb.org/t/p/original#{movie_poster(movie.title)}", class: "movie-poster-show")%></br>   
+    </div>
+  <% end %>
 <% end %>
