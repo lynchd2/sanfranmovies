@@ -8,7 +8,7 @@ Find the deployed version by [clicking here]("https://peaceful-depths-43249.hero
 # Technical Details
 * This app uses Ruby on Rails 5
 * Gems used to complete this application include but are not limited to: Geolocator, themoviedb, bcrycpt, bootstrap, and soda-ruby
-*You do NOT have to be in San Fransico to use this application. You can very well be in Italy and still search for movies that were filmed in San Fransico as long as you have an address!
+* You do NOT have to be in San Fransico to use this application. You can very well be in Italy and still search for movies that were filmed in San Fransico as long as you have an address!
 * To get the best results, make sure you search EXACTLY the format of the example search bar. You may or may not get the results you were looking for if you include extra information or disclude information.
 
 #Get Access
